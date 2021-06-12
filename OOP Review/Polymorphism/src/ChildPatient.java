@@ -1,11 +1,15 @@
-public class ChildPatient extends Person implements Diagnosable{
+public class ChildPatient extends Person implements Diagnosable {
     double temperature;
     int systolic;
     int diastolic;
+
     @Override
     public double getTemperature() {
         return temperature;
     }
+
+    @Override
+    public boolean hasFever() { return temperature > 100.4; }
 
     @Override
     public int getSystolic() {
