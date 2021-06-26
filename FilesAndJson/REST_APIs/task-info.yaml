@@ -98,16 +98,16 @@ files:
 - name: src/OnlineRecipeDatabase.java
   visible: true
   placeholders:
-  - offset: 593
-    length: 120
+  - offset: 612
+    length: 254
     placeholder_text: "/* TODO \nYou have to use the url to retrieve the contents\
       \ of the website. \nThis will be a String, but in JSON format. */"
     initial_state:
       length: 120
       offset: 593
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: |2-
 
               // From now on is like reading from the keyboard...
@@ -119,28 +119,28 @@ files:
 
               }
               scan.close();
-  - offset: 729
-    length: 44
+  - offset: 882
+    length: 46
     placeholder_text: "/* TODO \nRemember to return a JSON object.*/"
     initial_state:
       length: 44
       offset: 729
     initialized_from_dependency: false
     selected: false
-    status: Unchecked
+    status: Failed
     encrypted_possible_answer: (JsonObject) Jsoner.deserialize(result, new JsonObject())
-  - offset: 922
-    length: 43
+  - offset: 1058
+    length: 7
     placeholder_text: "/* TODO \nFill in this data type (Object) */"
     initial_state:
       length: 43
       offset: 922
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: URL
-  - offset: 976
-    length: 41
+  - offset: 1076
+    length: 3
     placeholder_text: |-
       /* TODO
       Fill in this datatype (Object) */
@@ -148,11 +148,11 @@ files:
       length: 41
       offset: 976
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: URL
-  - offset: 1046
-    length: 52
+  - offset: 1118
+    length: 304
     placeholder_text: |-
       /* TODO
       Read the information coming from the web
@@ -161,8 +161,8 @@ files:
       length: 52
       offset: 1046
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: |2-
        // From now on is like reading from the keyboard...
               Scanner scan = new Scanner(url.openStream());
@@ -173,18 +173,18 @@ files:
 
               }
               scan.close();
-  - offset: 1114
+  - offset: 1434
     length: 42
     placeholder_text: "/* TODO \nreturn the appropriate result.\n*/"
     initial_state:
       length: 42
       offset: 1114
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: (JsonObject) Jsoner.deserialize(result, new JsonObject());
-  - offset: 1258
-    length: 172
+  - offset: 1579
+    length: 436
     placeholder_text: "/* TODO \nThis should return a String with each recipe in three\
       \ lines:\nTitle:the title of the recipe\nLink:the link to the recipe\nIngredients:The\
       \ ingredients of teh recipe.*/"
@@ -192,8 +192,8 @@ files:
       length: 172
       offset: 1258
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: |-
       JsonArray recipes = (JsonArray) doc.get("results");
               for(Object r : recipes){
@@ -202,16 +202,16 @@ files:
                   results += "link:"+(String)obj.get("href")+"\n";
                   results += "ingredients:"+(String)obj.get("ingredients")+"\n";
               }
-  - offset: 1528
-    length: 116
+  - offset: 2114
+    length: 307
     placeholder_text: "/* TODO\nGiven a String with some text in it, write that text\
       \ to a file. \nThe name of the file is given in outfile */"
     initial_state:
       length: 116
       offset: 1528
     initialized_from_dependency: false
-    selected: false
-    status: Unchecked
+    selected: true
+    status: Failed
     encrypted_possible_answer: |-
       try(DataOutputStream out = new DataOutputStream(new FileOutputStream(outfile))){
                   out.writeBytes(text);
@@ -240,5 +240,10 @@ files:
     \        /* TODO\nGiven a String with some text in it, write that text to a file.\
     \ \nThe name of the file is given in outfile */\n    }\n\n}\n"
   learner_created: false
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Your Methods for getRecipesBy... are throwing an exception when they shouldn&#39;t:
+    Server returned HTTP response code: 500 for URL: http://www.recipepuppy.com/api/?i=cheese,mayonnaise
+  time: Sat, 26 Jun 2021 04:30:47 UTC
 record: -1

@@ -1,57 +1,78 @@
 import com.github.cliftonlabs.json_simple.JsonArray;
 import com.github.cliftonlabs.json_simple.JsonObject;
 import com.github.cliftonlabs.json_simple.Jsoner;
-import java.io.DataOutputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
+import java.io.*;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
+
 
 public class OnlineRecipeDatabase {
 
     String baseUrl = "http://www.recipepuppy.com/api/?";
 
-    public JsonObject getRecipesByIngredients(String ingredients) throws Exception
-    {
-        //Getting the things ready to connect to the web
-        URL url = new URL(baseUrl+"i="+ingredients);
-/* TODO 
-You have to use the url to retrieve the contents of the website. 
-This will be a String, but in JSON format. */
-        return /* TODO 
-Remember to return a JSON object.*/;
+    public JsonObject getRecipesByIngredients(String ingredients) throws Exception {
+        String content = "";
+        try {
+            URL url = new URL(baseUrl + "i=" + ingredients);
+            Scanner urlScanner = new Scanner(url.openStream());
+
+            while (urlScanner.hasNextLine()) {
+                content = content + urlScanner.nextLine();
+            }
+            urlScanner.close();
+        } catch (MalformedURLException e) {
+            System.out.println(e.getMessage());
+        }
+        return Jsoner.deserialize(content, new JsonObject());
     }
 
-    public JsonObject getRecipesByDish(String dish) throws Exception
-    {
-        //Getting the things ready to connect to the web
-        /* TODO 
-Fill in this data type (Object) */ url = new /* TODO
-Fill in this datatype (Object) */(baseUrl+"q="+dish);
+    public JsonObject getRecipesByDish(String dish) throws Exception {
+        String content = "";
+        try {
+            URL url = new URL(baseUrl + "q=" + dish);
 
-       /* TODO
-Read the information coming from the web
- */
-        return /* TODO 
-return the appropriate result.
-*/
+
+            Scanner urlScanner = new Scanner(url.openStream());
+
+            while (urlScanner.hasNextLine()) {
+                content = content + urlScanner.nextLine();
+            }
+            urlScanner.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+        return Jsoner.deserialize(content, new JsonObject());
     }
 
 
-    public String formatRecipeAsString(JsonObject doc){
+    public String formatRecipeAsString(JsonObject doc) {
         String results = "";
         /* TODO 
 This should return a String with each recipe in three lines:
 Title:the title of the recipe
 Link:the link to the recipe
 Ingredients:The ingredients of teh recipe.*/
+        String title = (String) doc.get("title");
+        String link = (String) doc.get("href");
+        JsonArray ingredients = (JsonArray) doc.get("ingredients");
+        results += "title:" + title + "," + "href:" + link + "," + "ingredients:" + ingredients;
+
         return results;
     }
 
-    public void saveRecipes(String text, String outfile){
-        /* TODO
-Given a String with some text in it, write that text to a file. 
-The name of the file is given in outfile */
+    public void saveRecipes(String text, String outfile) {
+        try (FileOutputStream out = new FileOutputStream(outfile)) {
+                out.write(text.getBytes());
+                //out.flush();
+
+        } catch (FileNotFoundException e) {
+            System.out.print("Not Found");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

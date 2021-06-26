@@ -27,11 +27,28 @@ public class Database {
         this.data = data;
     }
 
-    public Database(String contents) {
-/* TODO 
-This constructor should take the contents of a CSV file and initialize the memember variables of the Database class.
-*/
-    }
+    public Database(String contents)
+    {
+       while (contents != null)
+       {
+           String[] values = contents.split("\n");
+
+           if (int i = 0; values[i] < 5; i++)
+           {
+               this.colNames = values[i];
+               this.colNames ++;
+
+           }
+
+           while (values[i] > 4 && contents)
+           {
+               data = contents[numRows][colNames]
+           }
+           this.numRows =
+       }
+
+
+
 
     public String getValue(String columnName,int row){
 /* TODO */

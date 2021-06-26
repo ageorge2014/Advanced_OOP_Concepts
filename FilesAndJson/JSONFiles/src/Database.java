@@ -1,25 +1,28 @@
 import com.github.cliftonlabs.json_simple.JsonArray;
 import com.github.cliftonlabs.json_simple.JsonObject;
+import jdk.nashorn.internal.parser.JSONParser;
 
 public class Database {
-    /* TODO 
-Declare a member variable that can 
-be EASILY set from the constructor. */
+    JsonObject o;
 
     public Database(JsonObject data){
-        /* TODO 
-set the memebr variable declared above.*/
+       this.o = data;
     }
 
     public JsonObject getRestaurant(String name){
-        /* TODO 
+        JSONParser = new JSONParser();
+        JsonObject obj = (JsonObject) o.get("name");
+    JsonArray list = (JsonArray) this.o.get("list");
+        /* TODO
 Complete this method as specified. */
     }
 
     public double getAvgReviews(String name){
-        /* TODO 
-Complete this method as specified.
- The previous method may be of help. 
-*/
+        JSONParser = new JSONParser();
+        JsonArray arr = (JsonArray) o.get("name");
+        for (int i = 0; i < array.size(); i++) {
+            JsonObject obj = (JsonObject) arr.get(i);
+            this.name[i] = new dou
+        }
     }
 }
