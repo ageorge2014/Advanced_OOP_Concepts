@@ -12,13 +12,19 @@ public class Car {
     }
 
     public void move(double miles){
-        /* TODO 
+        if (this.miles != 0) {
+            this.miles = this.miles - miles;
+            this.odometer = this.odometer + miles;
+            /* TODO
 move should subtract  'miles' from the miles left to travel and add 'miles' to the odometer. The miles to travel cannot be less than zero. */
+        }
     }
 
-    public void charge(){
+    public void charge() {
         this.miles = maxMiles;
+
     }
+
 
     public String toString(){
         return name+": odo:"+odometer+" - miles left:"+miles;

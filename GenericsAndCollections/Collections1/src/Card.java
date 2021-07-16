@@ -1,7 +1,8 @@
-public class Card <V,S>{
+public class Card <V,S> {
     private V value;
     private S suit;
-    public Card(V value, S suit){
+
+    public Card(V value, S suit) {
         this.value = value;
         this.suit = suit;
     }
@@ -22,7 +23,7 @@ public class Card <V,S>{
         this.suit = suit;
     }
 
-    public String toString(){
-        return value+" of "+suit;
+    public String toString() {
+        return value + " of " + suit;
     }
 }

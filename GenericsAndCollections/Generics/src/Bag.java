@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Bag<T> {
     ArrayList<T> objects;
     public Bag(){
-        /* TODO 
+        ArrayList<T> o = new ArrayList<T>();/* TODO
 Initialize the objects variable*/
     }
-    /* TODO 
+    o.add<T>();/* TODO
 code the add method described. It should be public and not 
 return anything. Just take in a parameter and  throw an 
 exception. Read the documentation for this.*/
