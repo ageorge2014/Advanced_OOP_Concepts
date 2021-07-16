@@ -12,20 +12,21 @@ Create a constructor that receives a Car object and initializes c.*/
     @Override
     public void run() {
         while (this.c.odometer < distance) {
-            this.c.move(1);
-
-            if ((this.c.miles) > 0) {
-                c.charge();
-                System.out.println("Charging" + c.name);
-            } else {
-                try {
-                    Thread.sleep((long) this.c.miles);
+            if ((this.c.miles) == 0) {
+                try{
+                    c.charge();
+                    Thread.sleep((long)this.c.miles);
+                    System.out.println("Charging" + c.name);
                 } catch (InterruptedException e) {
-                    throw new IllegalStateException(e);
+                    e.printStackTrace();
                 }
             }
-
+            this.c.move(1);
         }
     }
-}
 
+/* TODO
+
+Override one method.  This is the task the thread will perform... You have to determine which method this is.
+Check the method description. */
+}

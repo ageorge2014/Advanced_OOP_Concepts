@@ -118,7 +118,7 @@ files:
     selected: true
     status: Failed
     encrypted_possible_answer: implements Runnable
-  - offset: 186
+  - offset: 185
     length: 90
     placeholder_text: "/* TODO \nCreate a constructor that receives a Car objec and\
       \ initializes c.*/"
@@ -132,8 +132,8 @@ files:
       public Racer(Car c){
               this.c=c;
           }
-  - offset: 295
-    length: 637
+  - offset: 294
+    length: 633
     placeholder_text: "/* TODO \nOverride one method.  This is the task the thread\
       \ will perform... You have to determine which method this is.\nCheck the method\
       \ description. */"
@@ -170,5 +170,5 @@ files:
 status: Failed
 feedback:
   message: Is your thread sleeping while charging?
-  time: Thu, 15 Jul 2021 20:15:11 UTC
+  time: Fri, 16 Jul 2021 03:34:26 UTC
 record: -1

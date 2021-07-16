@@ -13,7 +13,7 @@ files:
       offset: 109
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: static ExecutorService service;
   - offset: 301
     length: 14
@@ -23,7 +23,7 @@ files:
       offset: 315
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: new Racer(c1);
   - offset: 342
     length: 13
@@ -33,10 +33,10 @@ files:
       offset: 378
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: new Racer(c2)
-  - offset: 398
-    length: 132
+  - offset: 390
+    length: 72
     placeholder_text: |-
       /* TODO
       Submit both runnables to the ExecutorService and then request the ExecutorService to shutdown */
@@ -45,12 +45,12 @@ files:
       offset: 457
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: |-
       service.submit(racer1);
               service.submit(racer2);
               service.shutdown();
-  - offset: 613
+  - offset: 505
     length: 144
     placeholder_text: |-
       /* TODO
@@ -60,7 +60,7 @@ files:
       offset: 569
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: |2-
           public static void initExecutorService(){
               service = Executors.newFixedThreadPool(3);
@@ -102,14 +102,14 @@ files:
   visible: true
   placeholders:
   - offset: 39
-    length: 720
+    length: 841
     placeholder_text: "/* TODO \nThis class is exactly as the Racer from Task 1*/"
     initial_state:
       length: 57
       offset: 19
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: |-
       implements Runnable{
           Car c;
@@ -149,7 +149,7 @@ files:
       offset: 126
     initialized_from_dependency: false
     selected: true
-    status: Failed
+    status: Solved
     encrypted_possible_answer: |2
          public Car(String name,double miles){
               this.miles = miles;
@@ -174,8 +174,8 @@ files:
     \    public String name;\n    public double maxMiles;\n\n /* TODO \nExact same\
     \ methods and constructor as the Car in task 1*/\n}\n"
   learner_created: false
-status: Failed
+status: Solved
 feedback:
-  message: Compilation Failed
-  time: Thu, 15 Jul 2021 20:13:19 UTC
+  message: Congratulations!
+  time: Fri, 16 Jul 2021 03:41:29 UTC
 record: -1

@@ -14,17 +14,16 @@ public class Task {
 
 
         initExecutorService();
-        try {
-            service = Executors.newFixedThreadPool(3);
+
             service.submit(racer1);
             service.submit(racer2);
-        } finally {
-            if (service != null) service.shutdown();
+
+            service.shutdown();
         }
        /* TODO
 Implement the initExecutorService method. This has to initialize service to a new FixedThreadPool with a minimum of 3 threads */
-    }
 
-    private static void initExecutorService() {
+    public static void initExecutorService() {
+        service = Executors.newFixedThreadPool(3);
     }
 }
