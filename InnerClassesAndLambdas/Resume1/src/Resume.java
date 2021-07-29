@@ -2,22 +2,75 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Resume {
-/* TODO */
-Create a public member inner class Education according to the specifications.
 
-/* TODO */
-Create a public static inner class called Experience, according to the specifications.
+    public class Education {
+        String school;
+        String major;
 
-/* TODO */
-Create the Person and List of Education and List of experience objects. They should be private.
-    public Resume(Person p){
-/* TODO */
-This constructor should initialize the person and do all necessary initializations for the other methods to work.
+        public String getSchool() {
+            return school;
+        }
+        public String getMajor() {
+            return major;
+        }
+
+        public Education(String school, String major) {
+            this.school = school;
+            this.major = major;
+        }
+
+
+
+        @Override
+        public String toString() {
+            return major + "at" + school;
+        }
     }
 
-/* TODO */
-Create the addEducation, addExperience and override the toString methods as specified.
+    public static class Experience {
+        String title;
+        int startYear;
+        int endYear;
 
+        public Experience(String title, int startYear, int endYear) {
+            this.title = title;
+            this.startYear = startYear;
+            this.endYear = endYear;
+        }
 
+        @Override
+        public String toString() {
+            return (this.startYear + "-" + this.endYear + ":" + this.title);
+        }
+    }
+
+    private Person person;
+    private List<Education> educationList;
+    private List<Experience> experienceList;
+
+    public Resume(Person p) {
+        person = p;
+        educationList = new ArrayList<>();
+        experienceList = new ArrayList<>();
+    }
+    public void addExperience(Experience experience) {
+        experienceList.add(experience);
+    }
+    public void addEducation(Education education) {
+        educationList.add(education);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+
+        str.append(person.toString());
+        str.append("Experience");
+        experienceList.forEach(item -> str.append(item + "\n"));
+        str.append("Education" + "\n");
+        educationList.forEach(item -> str.append(item + "\n"));
+
+        return str.toString();
+    }
 
 }
