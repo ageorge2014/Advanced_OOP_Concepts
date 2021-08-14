@@ -95,7 +95,7 @@ files:
     status: Unchecked
     encrypted_possible_answer: public class Person {
   - offset: 171
-    length: 494
+    length: 811
     placeholder_text: |-
       /* TODO */
       Create two private member variables to hold the name and the birthDate of the employee. The birthdate has to be a LocalDate
@@ -108,7 +108,7 @@ files:
     encrypted_possible_answer: |-
       private String name;
           private LocalDate birthDate;
-  - offset: 667
+  - offset: 984
     length: 0
     placeholder_text: |-
       /* TODO */
@@ -135,7 +135,7 @@ files:
                   return name+":"+salary;
               }
           }
-  - offset: 669
+  - offset: 986
     length: 0
     placeholder_text: |-
       /* TODO */
@@ -147,7 +147,7 @@ files:
     selected: false
     status: Unchecked
     encrypted_possible_answer: private Position position;
-  - offset: 672
+  - offset: 989
     length: 0
     placeholder_text: |-
       /* TODO */
@@ -168,7 +168,7 @@ files:
               this.name = name;
               this.birthDate = LocalDate.parse(birthDate);
           }
-  - offset: 672
+  - offset: 989
     length: 2
     placeholder_text: |-
       /* TODO */
@@ -183,7 +183,7 @@ files:
       public int getAge(){
               return -1*Period.between(LocalDate.now(),this.birthDate).getYears();
           }
-  - offset: 674
+  - offset: 991
     length: 2
     placeholder_text: |-
       /* TODO */
@@ -198,7 +198,7 @@ files:
       public void setPosition(String name, double salary){
               this.position = new Position(name,salary);
           }
-  - offset: 676
+  - offset: 993
     length: 2
     placeholder_text: |-
       /* TODO */
@@ -213,7 +213,7 @@ files:
       public Position getPosition(){
               return this.position;
           }
-  - offset: 678
+  - offset: 995
     length: 1
     placeholder_text: |-
       /* TODO */
@@ -228,7 +228,7 @@ files:
       public String toString(){
               return name+" - "+getAge()+":"+this.position;
           }
-  - offset: 679
+  - offset: 996
     length: 3
     placeholder_text: |-
       /* TODO */

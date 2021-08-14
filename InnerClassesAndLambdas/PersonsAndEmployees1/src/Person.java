@@ -29,6 +29,19 @@ public class Person {
         Period p = Period.between(currentDate, this.birthDate);
         return p.getYears();
     }
+
+    public void setPosition(String title, double salary){
+        position = new Position(title, salary);
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + "" + this.getAge() + "" + this.getPosition().toString();
+    }
 }
 
 

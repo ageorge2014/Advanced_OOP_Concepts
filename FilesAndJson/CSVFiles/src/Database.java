@@ -23,38 +23,32 @@ public class Database {
         return data;
     }
 
-    public void setData(String[][] data) {
-        this.data = data;
+    public void setData(String[][] data) { this.data = data; }
+
+    public Database(String contents) {
+
+        String[] values = contents.split("\n");
+        colNames = values[0].split(",");
+        numRows = values.length - 1;
+        data = new String[numRows][colNames.length];
+
+        for (int i = 1; i<numRows ; i++)
+        {
+            data[i] = values[i].split(",");
+        }
     }
 
-    public Database(String contents)
-    {
-       while (contents != null)
-       {
-           String[] values = contents.split("\n");
+    public String getValue(String columnName, int row) {
+        int j = 0;
+        for (int i = 0; i < colNames.length; i++) {
+            if (colNames[i].equals(columnName)) {
+                j = i;
+                break;
+            }
+        }
 
-           if (int i = 0; values[i] < 5; i++)
-           {
-               this.colNames = values[i];
-               this.colNames ++;
+        return data[row][j];
 
-           }
-
-           while (values[i] > 4 && contents)
-           {
-               data = contents[numRows][colNames]
-           }
-           this.numRows =
-       }
-
-
-
-
-    public String getValue(String columnName,int row){
-/* TODO */
-This method should return the data contained on row "row" and the column matching  @columname
     }
 
 }
-
-
