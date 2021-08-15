@@ -4,7 +4,7 @@ files:
   visible: true
   placeholders:
   - offset: 1100
-    length: 150
+    length: 90
     placeholder_text: |-
       /* TODO
       Create a counter of String objects called words., and make it work for the words in the String text above. That way, the rest will compile. */
@@ -12,7 +12,7 @@ files:
       length: 150
       offset: 1100
     initialized_from_dependency: false
-    selected: false
+    selected: true
     status: Unchecked
     encrypted_possible_answer: '  Counter<String> words = new Counter<>(text.split("
       ")'

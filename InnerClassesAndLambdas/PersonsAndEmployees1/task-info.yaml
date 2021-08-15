@@ -275,8 +275,5 @@ files:
     /* TODO */
     Finish closing curly braces and the class.
   learner_created: false
-- name: src/TestPerson.java
-  visible: true
-  learner_created: true
 status: Unchecked
 record: -1

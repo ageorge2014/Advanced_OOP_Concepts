@@ -8,7 +8,7 @@ public class Card <V,S> {
     }
 
     public V getValue() {
-        return value;
+        return this.value;
     }
 
     public void setValue(V value) {
@@ -23,7 +23,8 @@ public class Card <V,S> {
         this.suit = suit;
     }
 
+    @Override
     public String toString() {
-        return value + " of " + suit;
+        return this.value + " of " + this.suit;
     }
 }
